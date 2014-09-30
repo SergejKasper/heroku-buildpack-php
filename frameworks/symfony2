@@ -30,7 +30,6 @@ case "$1" in
         ;;
     compile)
         echo "-----> Setting up Symfony2 app"
-        export SYMFONY_ENV=prod
         cp "$basedir/../conf/nginx/symfony2.conf.erb" "$BUILD_DIR/conf/site.conf.erb"
         ;;
     end)
