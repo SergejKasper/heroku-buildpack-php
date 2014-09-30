@@ -30,6 +30,7 @@ case "$1" in
         ;;
     compile)
         echo "-----> Setting up Symfony2 app"
+        export SYMFONY_ENV=prod
         cp "$basedir/../conf/nginx/symfony2.conf.erb" "$BUILD_DIR/conf/site.conf.erb"
         ;;
     end)
@@ -39,7 +40,7 @@ case "$1" in
 
         status "Warmuping cache"
         rm -rf app/cache/*
-        SYMFONY_ENV=prod php app/console cache:warmup --env=prod --no-debug | indent
+        php app/console cache:warmup --env=prod --no-debug | indent
 
 
         status "Inplace replacment of $CACHE_DIR to $APP_DIR"
