@@ -113,6 +113,8 @@ This framework preset doesn't need any configuration to work.
 Please note that if you use config vars in Composer hooks, or in `compile`
 scripts, then a new code push may be necessary if you decide to change a config variable.
 
+Add "export SYMFONY_ENV=prod" to your .env file to avoid issues with symfony install --no-dev  
+
 ## Extensions
 
 When the buildpack encounters `ext-` requirements in your `composer.json`, it will look
